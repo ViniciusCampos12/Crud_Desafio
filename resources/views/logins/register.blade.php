@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('title', 'Login')
+@section('title', 'Cadastro')
 
 @section('conteudo')
 
@@ -8,7 +8,7 @@
         <div class="row justify-content-center">
             <div class="col-md-4">
                 <div class="card border-primary mb-3"">
-                    <div class=" card-header">Preencha os dados para logar</div>
+                    <div class=" card-header">Preencha os dados para se cadastar</div>
                 <div class="card-body">
                     <div class="col-md-8 offset-md-2">
                         <form action="{{ route('login.register') }}" method="post">

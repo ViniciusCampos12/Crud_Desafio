@@ -7,6 +7,12 @@ use App\Models\Contato;
 
 class OfflineController extends Controller
 {
+
+    /**
+     * Exibe todos registros do lixo
+     *
+     * @return void
+     */
     public function index()
     {
         $contatos = Contato::orderBy('id')->get();

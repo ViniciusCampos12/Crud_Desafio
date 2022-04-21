@@ -23,7 +23,6 @@
                 <td>{{$contato->name}}</td>
                 <td>{{$contato->email}}</td>
                 <td>{{$contato->contact}}</td>
-                <td><button type="button" class="btn btn-primary"  onclick=" location.href='{{route('login.restore',[$contato->id])}}'">Restaurar</button></td>
             </tr>
         @endforeach
         </tbody>

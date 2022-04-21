@@ -6,7 +6,7 @@
     <main>
         <h1 style="text-align: center;">Contatos</h1>
         <div class="m-5">
-            <div style="margin-bottom: 15px; text-align: right; padding: 5px; position:absolute; top:55px; right:55px;">
+            <div style="margin-bottom: 15px; text-align: right; padding: 5px; position:absolute; top:45px; right:55px;">
                 <h2>Seja bem vindo(a), {{ Auth::user()->name }} </h2>
                 <a href="{{ route('login.logout') }}" class="btn btn-lg btn-danger">
                     <span class="glyphicon glyphicon-log-out"></span> Log out </a>
@@ -39,7 +39,7 @@
                 </tbody>
             </table>
 
-            <button type=" button" class="btn btn-secondary ""  onclick=" location.href='{{ route('contato.create') }}'">Novo Contato</button>
-            <button type=" button" class="btn btn-secondary ""  onclick=" location.href='{{ route('contato.trash') }}'">Lixo</button>
+            <button type=" button" class="btn btn-success ""  onclick=" location.href='{{ route('contato.create') }}'">Novo Contato</button>
+            <button type=" button" class="btn btn-dark ""  onclick=" location.href='{{ route('contato.trash') }}'">Lixo</button>
     <main>
 @endsection

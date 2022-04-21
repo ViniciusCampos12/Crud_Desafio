@@ -4,7 +4,7 @@
 
 @section('conteudo')
 <h1 align="center">Lixo</h1>
-<h4 style="text-align: center; color: #808080">Faça login para ter acesso ao dados.</h4>
+<h4 style="text-align: center; color: #808080">Registros deletados.</h4>
 <div style="margin: 100px;">
 <table class="table table-dark">
 

@@ -8,6 +8,13 @@ use App\Models\Contato;
 
 class ContatoController extends Controller
 {
+    /**
+     *
+     * Injeta dependencia nos metodos
+     * Injeta middleware auth para verificar se usuario esta logao
+     *
+     * @param Contato $contato
+     */
     public function __construct(Contato $contato)
     {
         $this->middleware('auth');
@@ -16,7 +23,7 @@ class ContatoController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+     * Retorna todos os registros
      *
      * @return \Illuminate\Http\Response
      */
@@ -27,7 +34,7 @@ class ContatoController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Exibe o formulário de inserção
      *
      * @return \Illuminate\Http\Response
      */
@@ -37,7 +44,7 @@ class ContatoController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Executa método que inseri dados no banco.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -54,7 +61,7 @@ class ContatoController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Exibe um registro especifico
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -67,7 +74,7 @@ class ContatoController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Exibe o formulário para edição de um registro
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -79,7 +86,7 @@ class ContatoController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Atualiza o registro selecionado
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -95,7 +102,7 @@ class ContatoController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Deleta um registro
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -108,6 +115,11 @@ class ContatoController extends Controller
         return redirect()->route('contato.index');
     }
 
+    /**
+     * Exibe um lista do registros deletados
+     *
+     * @return void
+     */
     public function trashed()
     {
        $contatos = $this->contato->onlyTrashed()->get();;
@@ -115,6 +127,12 @@ class ContatoController extends Controller
        return view('trash.lixo', compact('contatos'));
     }
 
+    /**
+     * Restaura um registro do lixo
+     *
+     * @param [type] $id
+     * @return void
+     */
     public function restaurar($id)
     {
         $contato = $this->contato->withTrashed()->findOrFail($id);
